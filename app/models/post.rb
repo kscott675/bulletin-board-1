@@ -11,5 +11,6 @@
 #  board_id   :integer
 #
 class Post < ApplicationRecord
+  validates(:body, { :presence => true })
   belongs_to(:posts_in_a_board, class_name: "Board", foreign_key: "board_id")
 end
